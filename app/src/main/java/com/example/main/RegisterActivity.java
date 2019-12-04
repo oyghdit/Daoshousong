@@ -15,7 +15,7 @@ import com.example.dao.DBOpenHelper;
 import com.example.daoshousong.R;
 import com.example.modle.Tb_customerinfo;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private Button btnregister;
     private Button btncancel;
     private EditText usernameET;
@@ -51,7 +51,7 @@ public class Register extends AppCompatActivity {
                 if(!(usernameET.getText().toString().equals("")||userpwdET.getText().toString().equals("")))
                 {
                     //创建数据库连接
-                    CustomerDao cdao=new CustomerDao(Register.this);
+                    CustomerDao cdao=new CustomerDao(RegisterActivity.this);
                     // 创建tb_customerinfo对象
                     Tb_customerinfo tb_customerinfo = new Tb_customerinfo(usernameET.getText().toString(),
                             userpwdET.getText().toString(), sexSP.getSelectedItem().toString(),
@@ -59,12 +59,12 @@ public class Register extends AppCompatActivity {
                             cbuildingET.getText().toString(),cdormitoryET.getText().toString());
                     cdao.add(tb_customerinfo);
                     // 弹出信息提示
-                    Toast.makeText(Register.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Register.this, Login.class);
+                    Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }else{
 
-                    Toast.makeText(Register.this, "请输入用户名和密码", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "请输入用户名和密码", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity {
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Register.this, Login.class);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
