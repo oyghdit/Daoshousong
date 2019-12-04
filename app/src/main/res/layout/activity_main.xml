@@ -17,28 +17,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/home_bottom_parent_bg"
+            android:background="?android:attr/windowBackground"
             android:orientation="horizontal">
         <RadioButton
                 android:id="@+id/rb_home"
                 style="@style/MainButtonStyle"
                 android:drawableTop="@drawable/home_button_selector"
-                android:text="首页" />
+                android:text="首页"
+                android:layout_marginBottom="5dp" />
         <RadioButton
-                android:id="@+id/rb_type"
+                android:id="@+id/rb_foodcircle"
                 style="@style/MainButtonStyle"
                 android:drawableTop="@drawable/type_button_selector"
-                android:text="美食圈" />
+                android:text="美食圈"
+                android:layout_marginBottom="5dp" />
         <RadioButton
-                android:id="@+id/rb_community"
+                android:id="@+id/rb_order"
                 style="@style/MainButtonStyle"
                 android:drawableTop="@drawable/community_button_selector"
                 android:paddingTop="10dp"
-                android:text="订单" />
+                android:text="订单"
+                android:layout_marginBottom="5dp"/>
         <RadioButton
                 android:id="@+id/rb_user"
                 style="@style/MainButtonStyle"
                 android:drawableTop="@drawable/user_button_selector"
-                android:text="我的" />
+                android:text="我的"
+                android:layout_marginBottom="5dp"/>
     </RadioGroup>
 </LinearLayout>
