@@ -17,6 +17,7 @@ import com.example.modle.Tb_customerinfo;
 
 public class Register extends AppCompatActivity {
     private Button btnregister;
+    private Button btncancel;
     private EditText usernameET;
     private EditText userpwdET;
     private Spinner sexSP;
@@ -32,6 +33,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
 
         btnregister=(Button)findViewById(R.id.button1);
+        btncancel = (Button)findViewById(R.id.button2);
         usernameET=(EditText)findViewById(R.id.editText1);
         userpwdET=(EditText)findViewById(R.id.editText2);
         sexSP= (Spinner) findViewById(R.id.spinner3);
@@ -65,6 +67,14 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "请输入用户名和密码", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
             }
         });
     }

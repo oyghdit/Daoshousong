@@ -30,12 +30,13 @@ public class Login extends AppCompatActivity {
                 String name = etname.getText().toString();
                 String pwd = etpwd.getText().toString();
                 Intent intent1 = new Intent(Login.this, MainActivity.class);
+                startActivity(intent1);
                 CustomerDao pd = new CustomerDao(Login.this);
                 if(name == ""&&pwd == ""){
                     Toast.makeText(Login.this,"您未输入用户名与密码",Toast.LENGTH_SHORT).show();
                 }else if(pd.getCount() == 0){
                     Toast.makeText(Login.this,"您未注册",Toast.LENGTH_SHORT).show();
-                }else if(pd.find(name).getCname().equals(name)&&pd.find(pwd).getCpwd().equals(pwd)){
+                }else if(pd.find(name).getCname().equals(name)&&pd.find(name).getCpwd().equals(pwd)){
                     startActivity(intent1);
                 }else{
                     Toast.makeText(Login.this,"你输入的用户名或密码有误",Toast.LENGTH_SHORT).show();

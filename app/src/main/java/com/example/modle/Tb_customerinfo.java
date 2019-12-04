@@ -9,10 +9,6 @@ public class Tb_customerinfo {   //顾客实体类
     private String cbuilding;   //楼栋
     private String cdormitory;  //寝室号
 
-    public Tb_customerinfo(String string, String toString, String s, String cpwd){
-        super();
-    }
-
     public Tb_customerinfo(String cname,String cpwd,String csex,String ctele,String cschool,
                            String cbuilding,String cdormitory){
         super();

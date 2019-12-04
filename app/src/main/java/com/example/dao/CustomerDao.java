@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDao {
-    private com.example.dao.DBOpenHelper dbhelper;
+    private DBOpenHelper dbhelper;
     private SQLiteDatabase db;
     public CustomerDao(Context context){
-        dbhelper = new com.example.dao.DBOpenHelper(context);   //链接数据库
+        dbhelper = new DBOpenHelper(context);   //链接数据库
     }
 
     //添加顾客信息
