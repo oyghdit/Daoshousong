@@ -42,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         cbuildingET=(EditText)findViewById(R.id.editText6);
         cdormitoryET=(EditText)findViewById(R.id.editText7);
 
+        //注册按钮
         btnregister.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -70,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        //取消按钮
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
