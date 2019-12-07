@@ -7,11 +7,18 @@
     <include
             android:id="@+id/titlebar"
             layout="@layout/titlebar" />
+
+    <com.youth.banner.Banner
+            android:id="@+id/banner1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp" />
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/titlebar" />
+
     <ImageButton
             android:id="@+id/ib_top"
             android:layout_width="40dp"
@@ -21,5 +28,5 @@
             android:layout_marginBottom="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/top_btn"
-            android:visibility="gone" />
+            android:visibility="visible" />
 </RelativeLayout>
