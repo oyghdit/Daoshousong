@@ -8,10 +8,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import com.example.base.BaseFragment;
 import com.example.daoshousong.R;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
-import okhttp3.Call;
-import okhttp3.Request;
 
 import static android.content.ContentValues.TAG;
 
@@ -37,25 +33,6 @@ public class HomeFragment extends BaseFragment {    //主页面Fragment
     public void initData() {
         super.initData();
         Log.e(TAG, "主页数据被初始化了");
-        String url = "http://www.csdn.net/";
-        OkHttpUtils
-                .get()
-                .url(url)
-                .build()
-                .execute(new StringCallback()
-                {
-                    //当请求失败的时候回调
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-                        Log.e(TAG,"首页请求失败==" + e.getMessage());
-                    }
-
-                    //当联网成功时回调
-                    @Override
-                    public void onResponse(String response, int id) {
-                        Log.e(TAG,"首页请求成功==" + response);
-                    }
-                });
     }
     private void initListener() {
         //置顶的监听
