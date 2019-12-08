@@ -35,6 +35,14 @@ public class MainActivity extends FragmentActivity {
         ButterKnife.bind(this);
         initFragment();
         initListener();
+        int id = getIntent().getIntExtra("id", 0);
+        if (id == 1) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.activity_main,new UserFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
     private void initListener(){

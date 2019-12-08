@@ -28,9 +28,10 @@ public class CustomerDao {
     public void update(Tb_customerinfo tb_customerinfo){
         db = dbhelper.getWritableDatabase();
         db.execSQL("update tb_customerinfo set cname = ?,cpwd = ?,csex = ?,ctele = ?,cschool = ?," +
-                "cbuilding = ?,cdormitory = ?",new Object[]{tb_customerinfo.getCname(),
+                "cbuilding = ?,cdormitory = ? where cname = ?",new Object[]{tb_customerinfo.getCname(),
                 tb_customerinfo.getCpwd(),tb_customerinfo.getCsex(),tb_customerinfo.getCtele(),
-                tb_customerinfo.getCschool(),tb_customerinfo.getCbuilding(),tb_customerinfo.getCdormitory()});
+                tb_customerinfo.getCschool(),tb_customerinfo.getCbuilding(),tb_customerinfo.getCdormitory(),
+                tb_customerinfo.getCname()});
     }
 
     //查询顾客信息
@@ -38,7 +39,7 @@ public class CustomerDao {
         db = dbhelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from tb_customerinfo where cname = ?",
                                     new String[]{ String.valueOf(cname) }); //根据用户名查找信息并存入cursor
-        if(cursor.moveToNext()){    //将查询信息存入Tb_customerinfo类中
+        if(cursor.moveToFirst()){    //将查询信息存入Tb_customerinfo类中
             return new Tb_customerinfo(cursor.getString(cursor.getColumnIndex("cname")),
                                        cursor.getString(cursor.getColumnIndex("cpwd")),
                                        cursor.getString(cursor.getColumnIndex("csex")),

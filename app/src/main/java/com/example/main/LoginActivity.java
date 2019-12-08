@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.dao.CustomerDao;
 import com.example.daoshousong.R;
+import com.example.user.fragment.UserFragment;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etname;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
                 String name = etname.getText().toString();
                 String pwd = etpwd.getText().toString();
                 Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                intent1.putExtra("id",1);
                 startActivity(intent1);
                 CustomerDao pd = new CustomerDao(LoginActivity.this);
                 if(name == ""&&pwd == ""){
